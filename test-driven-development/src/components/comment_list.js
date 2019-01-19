@@ -7,6 +7,6 @@ const CommentList = (props) => (
     </ul>
 );
 
-const mapStateToProps = ({ comments }) => { comments };
+const mapStateToProps = ({ comments }) => ({ comments });
 
 export default connect(mapStateToProps)(CommentList);
