@@ -1,10 +1,10 @@
 import React from 'react';
 
 
-const VideoListItem = ({video, onVideoSelect}) => { //ES6, tells that passed var has a video and thus we want to make a new var video = to this one
+const VideoListItem = ({ video, onVideoSelect }) => { //ES6, tells that passed var has a video and thus we want to make a new var video = to this one
     const imageUrl = video.snippet.thumbnails.default.url;
-    
-    return( 
+
+    return (
         <li onClick={() => onVideoSelect(video)} className="list-group-item">
             <div className="video-list media">
                 <div className="media-left">
