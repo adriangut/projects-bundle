@@ -2,21 +2,21 @@ import React, { Component } from 'react';
 import { reduxForm, Field } from 'redux-form';
 import * as actions from '../../actions';
 
-const renderInput = field =>
+const renderInput = (field) =>
   <div>
     <input {...field.input} type={field.type} className="form-control" />
     {field.touched && field.error && <div className="error">{field.error}</div>}
   </div>;
 
 
-class Signup extends Component{
-    handleFormSubmit({ email, password, passwordConfirm }){
+class Signup extends Component {
+    handleFormSubmit = ({ email, password, passwordConfirm }) => {
         // call action creator to sign up the user
         this.props.signupUser({ email, password, passwordConfirm });
     }
 
-    renderAlert(){
-        if(this.props.errorMessage){
+    renderAlert() {
+        if (this.props.errorMessage) {
             return(
                 <div className="alert alert-danger">
                     <strong>Oops!</strong> {this.props.errorMessage}
@@ -25,11 +25,11 @@ class Signup extends Component{
         }
     }
 
-    render(){
+    render() {
         const { handleSubmit } = this.props;
 
         return(
-            <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
+            <form onSubmit={handleSubmit(this.handleFormSubmit)}>
                 <fieldset className="form-group">
                     <label>Email:</label>
                     <Field name="email" component={renderInput} type="email" />
@@ -49,35 +49,32 @@ class Signup extends Component{
     }
 }
 
-function validate(formProps){
+const validate = (formProps) => {
     const errors = {};
 
-    if(!formProps.email){
+    if (!formProps.email) {
         errors.email = 'Please enter an email';
     }
 
-    if(!formProps.password){
+    if (!formProps.password) {
         errors.password = 'Please enter a password';
     }
 
-    if(!formProps.passwordConfirm){
+    if (!formProps.passwordConfirm) {
         errors.passwordConfirm = 'Please enter a password confirmation';
     }
 
-    if(formProps.password !== formProps.passwordConfirm){
+    if (formProps.password !== formProps.passwordConfirm) {
         errors.password = 'Passwords must match';
     }
 
     return errors;
 }
 
-function mapStateToProps(state){
-    return { errorMessage: state.auth.error };
-}
-
+const mapStateToProps = (state) => ({ errorMessage: state.auth.error });
 
 export default reduxForm({
     form: 'signup',
     fields: ['email', 'password', 'passwordConfirm'],
-    validate
+    validate,
 }, mapStateToProps, actions)(Signup);

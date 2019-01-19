@@ -8,15 +8,15 @@ const renderInput = (field) => (
   </div>
 )
 
-class Signin extends Component{
-    handleFormSubmit({ email, password }){
+class Signin extends Component {
+    handleFormSubmit({ email, password }) {
         // need to do something to log user in
         this.props.signinUser({ email, password });
     }
 
-    renderAlert(){
-        if(this.props.errorMessage){
-            return(
+    renderAlert() {
+        if (this.props.errorMessage) {
+            return (
                 <div className="alert alert-danger">
                     <strong>Oops!</strong> {this.props.errorMessage}
                 </div>
@@ -26,7 +26,6 @@ class Signin extends Component{
 
     render(){
         const { handleSubmit } = this.props;
-
 
         return(
             <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
@@ -45,8 +44,6 @@ class Signin extends Component{
     }
 }
 
-function mapStateToProps(state){
-    return { errorMessage: state.auth.error };
-}
+const mapStateToProps = (state) => ({ errorMessage: state.auth.error });
 
 export default reduxForm({ form: 'signin' }, mapStateToProps, actions)(Signin);

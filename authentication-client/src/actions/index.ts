@@ -19,12 +19,12 @@ export const signInUser = ({ email, password }) => (dispatch) => {
         .catch(() => {
             // if request is bad...
             // - show an error to the user
-            dispatch(authError('Bad Login Info'));
+            dispatch(authError('Incorrect Login Information'));
         });
 };
 
 export const signupUser = ({ email, password }) => (dispatch) => {
-    axios.post(`$(ROOT_URL/signup`, { email, password })
+    axios.post(`${ROOT_URL}/signup`, { email, password })
         .then((response) => {
             dispatch({ type: AUTH_USER });
             localStorage.setItem('token', response.data.token);
