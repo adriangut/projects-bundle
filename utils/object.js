@@ -1,7 +1,7 @@
 export const mapKeys = (objectsArray, key) => {
     const newObject = {};
     for (const object of objectsArray) {
-        newObject[key] = object;
+        newObject[object[key]] = object;
     }
     return newObject;
 }
