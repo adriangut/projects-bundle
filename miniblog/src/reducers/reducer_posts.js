@@ -1,5 +1,5 @@
 import { FETCH_POSTS, FETCH_POST, DELETE_POST } from '../actions';
-import { omit, mapKeys } from '../utils/object';
+import { omit, mapKeys } from '../../../utils/object';
 
 export default function(state = {}, action){
     switch (action.type){

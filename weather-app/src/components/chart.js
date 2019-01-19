@@ -1,6 +1,6 @@
 import React from 'react';
 import { Sparklines, SparklinesLine, SparklinesReferenceLine } from 'react-sparklines';
-import { sum } from '../utils/array';
+import { sum } from '../../../utils/array';
 
 const average = (data) => Math.round(sum(data)/data.length);
 
