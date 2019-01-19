@@ -23,15 +23,16 @@
     "jsdom": "8.1.0",
     "mocha": "^5.2.0",
     "react-addons-test-utils": "0.14.7",
-    "webpack": "1.12.9",
+    "webpack": "^4.0.0",
     "webpack-dev-server": "^3.1.14"
   },
   "dependencies": {
+    "babel-core": "^6.26.3",
     "babel-preset-stage-1": "6.1.18",
     "react": "16.7.0",
     "react-dom": "16.7.0",
     "react-redux": "4.4.9",
-    "react-router": "2.0.1",
+    "react-router": "^3.2.1",
     "redux": "3.0.4",
     "youtube-api-search": "0.0.5"
   },
