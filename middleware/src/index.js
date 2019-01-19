@@ -10,7 +10,8 @@ import Async from './middlewares/async';
 const createStoreWithMiddleware = applyMiddleware(Async)(createStore);
 
 ReactDOM.render(
-  <Provider store={createStoreWithMiddleware(reducers)}>
-    <App />
-  </Provider>
-  , document.querySelector('.container'));
+    <Provider store={createStoreWithMiddleware(reducers)}>
+        <App />
+    </Provider>,
+    document.querySelector('.container'),
+);
