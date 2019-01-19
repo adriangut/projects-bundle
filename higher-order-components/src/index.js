@@ -12,11 +12,12 @@ import reducers from './reducers';
 const createStoreWithMiddleware = applyMiddleware()(createStore);
 
 ReactDOM.render(
-  <Provider store={createStoreWithMiddleware(reducers)}>
-    <Router history={browserHistory}>
-      <Route path="/" component={App}>
-        <Route path="resources" component={requireAuth(Resources)} />
-      </Route>
-    </Router>
-  </Provider>
-  , document.querySelector('.container'));
+    <Provider store={createStoreWithMiddleware(reducers)}>
+        <Router history={browserHistory}>
+            <Route path="/" component={App}>
+              <Route path="resources" component={requireAuth(Resources)} />
+            </Route>
+        </Router>
+    </Provider>,
+    document.querySelector('.container'),
+);

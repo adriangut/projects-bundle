@@ -1,10 +1,3 @@
-import {
-    CHANGE_AUTH
-} from './types';
+import { CHANGE_AUTH as type } from './types';
 
-export function authenticate(isLogggedIn){
-    return{
-        type: CHANGE_AUTH,
-        payload: isLogggedIn
-    };
-}
+export const authenticate = (isLogggedIn) => ({ type, payload: isLogggedIn });
