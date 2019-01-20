@@ -14,16 +14,6 @@ class Signin extends Component {
         this.props.signinUser({ email, password });
     }
 
-    renderAlert() {
-        if (this.props.errorMessage) {
-            return (
-                <div className="alert alert-danger">
-                    <strong>Oops!</strong> {this.props.errorMessage}
-                </div>
-            );
-        }
-    }
-
     render(){
         const { handleSubmit } = this.props;
 
@@ -37,7 +27,11 @@ class Signin extends Component {
                     <label>Password:</label>
                     <Field name="password" component={renderInput} type="password" />
                 </fieldset>
-                {this.renderAlert()}
+                {this.props.errorMessage &&
+                    <div className="alert alert-danger">
+                        <strong>Oops!</strong> {this.props.errorMessage}
+                    </div>
+                }
                 <button action="submit" className="btn btn-primary">Sign In</button>
             </form>
         );
