@@ -7,17 +7,16 @@ import { createPost } from '../actions';
 class PostsNew extends Component {
     renderField = (field) => {
         const { meta: { touched, error } } = field;
-        const className=`form-group ${touched && error ? 'has-danger' : ''}`;
 
         return (
-            <div className={className}>
+            <div className={`form-group ${touched && error ? 'has-danger' : ''}`}>
                 <label>{field.label}</label>
                 <input className="form-control"
                     type="text"
                     {...field.input}
                 />
                 <div className="text-help">
-                {touched ? error : ""}
+                {touched ? error : undefined}
                 </div>
             </div>
         );
