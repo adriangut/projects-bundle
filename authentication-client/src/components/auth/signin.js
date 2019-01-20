@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { reduxForm, Field } from 'redux-form';
-import * as actions from '../../actions';
+import * as actions from '../../ducks';
 
 const renderInput = (field) => (
   <div>
