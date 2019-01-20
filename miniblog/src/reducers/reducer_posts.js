@@ -1,8 +1,8 @@
 import { FETCH_POSTS, FETCH_POST, DELETE_POST } from '../actions';
 import { omit, mapKeys } from '../../../utils/object';
 
-export default function(state = {}, action){
-    switch (action.type){
+export default function(state = {}, action) {
+    switch (action.type) {
         case DELETE_POST:
             return omit(state, action.payload);
         case FETCH_POST:

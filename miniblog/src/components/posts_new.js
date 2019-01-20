@@ -32,7 +32,7 @@ class PostsNew extends Component {
     render() {
         const { handleSubmit } = this.props;
 
-        return(
+        return (
             <form onSubmit={handleSubmit(this.onSubmit)}>
                 <Field
                     label="Title"

@@ -9,16 +9,16 @@ const renderInput = (field) => (
 )
 
 class Signin extends Component {
-    handleFormSubmit({ email, password }) {
+    handleFormSubmit = ({ email, password }) => {
         // need to do something to log user in
         this.props.signinUser({ email, password });
     }
 
-    render(){
+    render() {
         const { handleSubmit } = this.props;
 
-        return(
-            <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
+        return (
+            <form onSubmit={handleSubmit(this.handleFormSubmit)}>
                 <fieldset className="form-group">
                     <label>Email:</label>
                     <Field name="email" component={renderInput} type="email" />
