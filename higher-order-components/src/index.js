@@ -7,7 +7,7 @@ import { Router, Route, browserHistory } from 'react-router';
 import requireAuth from './components/require_authentication';
 import App from './components/app';
 import Resources from './components/resources';
-import reducers from './reducers';
+import reducers from './ducks';
 
 const createStoreWithMiddleware = applyMiddleware()(createStore);
 
